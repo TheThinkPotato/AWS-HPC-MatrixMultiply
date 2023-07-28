@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
-#include <assert.h>
+// #include <assert.h>
 
 
-#define N 500
+#define N 1000
 #define RUNS 1
 double A[N][N], B[N][N], C[N][N], D[N][N];
 

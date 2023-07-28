@@ -1,0 +1,9 @@
+mpicc -std=c99 -o matrix_multiply matrix-mul.c
+mpirun -np 1 ./matrix_multiply
+
+sbatch submission_scriptmm.sbatch 
+squeue 
+sinfo
+
+
+https://www.hpcworkshops.com/03-parallel-cluster-cli/11-1stjob.html

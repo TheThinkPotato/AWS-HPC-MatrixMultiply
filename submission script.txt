@@ -1,0 +1,8 @@
+cat > submission_scriptmm.sbatch << EOF
+#!/bin/bash
+#SBATCH --job-name=matix-multiply-job
+#SBATCH --ntasks=4
+#SBATCH --output=%x_%j.out
+
+mpirun ./matrix_multiply
+EOF
