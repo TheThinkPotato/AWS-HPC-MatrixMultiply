@@ -40,4 +40,5 @@ int main(int argc, char* argv[])
 
     // Print the time taken by each MPI process
     printf("Process %d: %f seconds\n", rank, elapsed_time);
+    MPI_Finalize();
 }
