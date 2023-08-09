@@ -9,6 +9,7 @@ double A[N][N], B[N][N], C[N][N], D[N][N];
 
 int main(int argc, char* argv[])
 {
+    // Initialize MPI
     MPI_Init(&argc, &argv);
     int rank, size;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -27,8 +28,6 @@ int main(int argc, char* argv[])
     // Broadcast matrices A and B to all MPI processes
     MPI_Bcast(A, N * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
     MPI_Bcast(B, N * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
-
 
     double  start_time = MPI_Wtime();
 
