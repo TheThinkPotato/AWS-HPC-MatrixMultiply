@@ -5,7 +5,6 @@
 
 
 #define N 1000
-#define RUNS 1
 double A[N][N], B[N][N], C[N][N], D[N][N];
 
 int main(int argc, char* argv[])
@@ -14,9 +13,6 @@ int main(int argc, char* argv[])
     int rank, size;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
-
-    // Check if the number of MPI processes matches the required number of runs
-    // assert(size == RUNS);
 
     srand(42);
 
