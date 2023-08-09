@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <mpi.h>
-// #include <assert.h>
-
 
 #define N 1000
 double A[N][N], B[N][N], C[N][N], D[N][N];
@@ -25,10 +23,6 @@ int main(int argc, char* argv[])
             B[i][j] = rand();
         }
 
-    // Broadcast matrices A and B to all MPI processes
-    MPI_Bcast(A, N * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-    MPI_Bcast(B, N * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
     double  start_time = MPI_Wtime();
 
     for(int i = 0; i < N; i++)
@@ -43,7 +37,6 @@ int main(int argc, char* argv[])
 
     double end_time = MPI_Wtime();
     double elapsed_time = end_time - start_time;
-
 
     // Print the time taken by each MPI process
     printf("Process %d: %f seconds\n", rank, elapsed_time);
